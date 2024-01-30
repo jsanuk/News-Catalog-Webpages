@@ -1,0 +1,99 @@
+<html>
+    <head>
+	<link rel="stylesheet" href="css.css">
+        <title>The News News</title>
+    </head>
+    <body>
+        <h1>Fox</h1>
+        <div class="topnav">
+            <a href="byDate">By Date</a>
+            <a href="byTitle">By Title</a>
+            <a href="byAuthor">By Author</a>
+            <a href="byTopic">By Topic</a>
+            <a class="active" href="webpage2.html">Fox</a>
+			      <a href="webpage3.html">CNN</a>
+        </div>
+        <div class="bottomnav">
+          <input id="searchbar" onkeyup="search_articles()" type="text" name="search" placeholder="Search..">
+        </div>
+        <div class="bio">
+        <p>Welcome to our catalog, have fun browsing!</p>
+        </div>
+            <div class="article" style="border:1px; border-style:solid;">
+          <div class="container">
+            <h2><b>ARTICLE ONE TITLE</b></h2>
+          </div>
+          <img src="hamburger.jpg" alt="Article One Image">
+          <div class="container">
+            <p>Text from the first article...</p>
+          </div>
+          <div class="container">
+            <p>Relevant tags for the articles</p>
+            <p class="date">Written on Jan 03, 2021</p>
+          </div>
+        </div>
+        
+        <div class="article" style="border:1px; border-style:solid;">
+          <div class="container">
+            <h2><b>ARTICLE TWO TITLE</b></h2>
+          </div>
+          <img src="hamburger.jpg" alt="Article One Image">
+          <div class="container">
+            <p>Different text from the second article...</p>
+          </div>
+          <div class="container">
+            <p>Relevant tags for the articles</p>
+            <p class="date">Written on Jan 02, 2021</p>
+          </div>
+        </div>
+
+        <div class="article" style="border:1px; border-style:solid;">
+          <div class="container">
+            <h2><b>CNN 10: The big stories of the day, explained in 10 minutes - CNN Video</b></h2>
+          </div>
+          <img src="https://cdn.cnn.com/cnnnext/dam/assets/230307210725-ten-0308orig-00004120-super-tease.png" alt="image1">
+          <div class="container">
+            <p>Today CNN 10 is looking at the winter storms in California. Driveways are blocked and cars are buried under piles of snow in a state known for its beaches and sunny skies. Then, TikTok is top of mind after a bipartisan bill unveiled this week could mean an end to the app as we know it.</p>
+          </div>
+          <div class="container">
+            <p>URL: https://www.cnn.com/videos/cnn10/2023/03/07/ten-0308orig.cnn<br>
+               Source Name: CNN<br>
+               Author: not listed
+            </p>
+            <p class="date">2023-03-08</p>
+          </div>
+        </div>
+    <input type="hidden" value="~/home/sheasted/public_html/cse201/cse-201-project/articles.txt" id="myFile">
+    <div id="output"></div>
+</body>
+<script>
+  (function (parameters) {
+    const $output = document.getElementById('output')
+    document.getElementById('myFile').onchange = function() {
+      alert();
+      var file = this.files[0];
+
+      var reader = new FileReader();
+      reader.onload = function(progressEvent) {
+        // Entire file
+        // const text = this.result;
+        // $output.innerText = text
+
+        // By lines
+        var lines = text.split('\n');
+        for (var line = 0; line < lines.length; line++) {
+          console.log(lines[line]);
+        }
+
+      };
+      reader.readAsText(file);
+      document.write("<h1>" + progressEvent + "</h1>")
+    };
+  })();
+</script>
+<script src="./searchbar.js"></script>
+<footer>
+  <p>&copy; 2023 The News News</p>
+</footer>
+
+</html>
